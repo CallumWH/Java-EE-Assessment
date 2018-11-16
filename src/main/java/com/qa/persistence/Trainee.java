@@ -2,11 +2,10 @@ package com.qa.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,11 +20,19 @@ public class Trainee
 	private int traineeID;
 	@Column(length = 20)
 	private String traineeName;
+	@Column(length = 10)
+	private int classroomAssigned;
 	
-	@ManyToOne
-	@JoinColumn(name="classroom_fk")
-	private Classroom assigned_trainees;
-	
+	public int getClassroomAssigned()
+	{
+		return classroomAssigned;
+	}
+
+	public void setClassroomAssigned(int classroomAssigned)
+	{
+		this.classroomAssigned = classroomAssigned;
+	}
+
 	public int getTraineeID()
 	{
 		return traineeID;
@@ -45,7 +52,6 @@ public class Trainee
 	{
 		this.traineeName = traineeName;
 	}
-
 	
 
 	public Trainee()

@@ -11,11 +11,7 @@
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
          <property name="hibernate.show_sql" value="false" />
-         <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
-		   <property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:mapping_entities_db;create=true"/>
-		   <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-		   <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
-		   <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
+         <property name="javax.persistence.sql-load-script-source" value="import.sql"/>
       </properties>
    </persistence-unit>
 </persistence>

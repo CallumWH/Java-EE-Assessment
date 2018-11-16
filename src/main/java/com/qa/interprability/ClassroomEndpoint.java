@@ -21,29 +21,37 @@ public class ClassroomEndpoint {
 	@Path("/retrieve")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllAccounts() {
+	public String getAllClassrooms() {
 		return classroomManager.findAllClassrooms();
 	}
 
-	@Path("/add")
+	@Path("/addClassroom")
 	@POST
 	@Produces({ "application/json" })
 	@Consumes({ "application/json" })
-	public String addAccount(String string) {
+	public String addClassroom(String string) {
 		return classroomManager.createClassroom(string);
+	}
+	
+	@Path("/addTrainee")
+	@POST
+	@Produces({ "application/json" })
+	@Consumes({ "application/json" })
+	public String addTrainee(String string) {
+		return classroomManager.createTrainee(string);
 	}
 
 	@Path("/update/{id}")
 	@PUT
 	@Produces({ "application/json" })
-	public String updateAccount(String classroomJSON) {
+	public String updateClassroom(String classroomJSON) {
 		return classroomManager.updateClassroom(classroomJSON);
 	}
 
 	@Path("/delete/{id}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String deleteAccount(@PathParam("id") int id) {
+	public String deleteClassroom(@PathParam("id") int id) {
 		return classroomManager.deleteClassroom(id);
 
 	}
